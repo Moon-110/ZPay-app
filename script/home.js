@@ -129,7 +129,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function(e){
 
     const data= {
         name:'Cash Out',
-        date: new date().toLocalTimeString()
+        date: new Date().toLocaleTimeString()
     }
     transactionData.push(data);
     console.log(transactionData);
@@ -139,6 +139,34 @@ const logOut = document.getElementById('log-out').addEventListener('click', func
     window.location.href='./index.html';
 })
 
+
+// transaction 
+document.getElementById('transaction-button').addEventListener('click', function(){
+    // console.log(transactionData);
+    const transactionParent= document.getElementById('transaction-parent');
+    transactionParent.innerText=''
+
+    for(const data of transactionData){
+        const div = document.createElement('div')
+        div.innerHTML =`
+        <div class="bg-white rounded-xl p-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="border-2 p-2 rounded-full ">
+                    <img src="./assets/wallet1.png" alt="">
+                </div>
+                <div class="ml-2 ">
+                    <h1>${data.name}</h1>
+                    <p>${data.date}</p>
+                </div>
+                
+            </div>
+            <i class="fa-solid fa-ellipsis-vertical "></i>
+        </div>   
+        `
+
+        transactionParent.appendChild(div);
+    }
+})
 
 
 
