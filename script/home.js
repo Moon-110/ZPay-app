@@ -110,6 +110,7 @@ const validPinNum = 1234;
 document.getElementById('btn-withdraw').addEventListener('click', function(e){
     e.preventDefault();
     // console.log('withdraw money bttn clicked');
+    const agentsNumber= document.getElementById('agent-number').value;
     const amount = getInputValueNumber('withdraw-amount');
     const availableBalance = getInnerText('available-balance');
     // console.log(amount, availableBalance);
@@ -118,11 +119,11 @@ document.getElementById('btn-withdraw').addEventListener('click', function(e){
         return;
     }
 
-    const agentNumber = getInputValueNumber('agent-number');
+    const agentssNumber = getInputValueNumber('agent-number');
     const pinNum = getInputValueNumber('pin-num');
 
     // console.log(agentNumber, pinNum);
-    if(agentNumber.length<11){
+    if(agentsNumber.length<11){
         alert("Please provide valid account number");
         return;
     }
@@ -148,6 +149,59 @@ document.getElementById('btn-withdraw').addEventListener('click', function(e){
 const logOut = document.getElementById('log-out').addEventListener('click', function(){
     window.location.href='./index.html';
 })
+
+
+
+
+// transfer money
+const validPinNumb = 1234;
+document.getElementById('btn-transfer').addEventListener('click', function(e){
+    e.preventDefault();
+    // console.log('transfer money bttn clicked');
+    const usersNumber= document.getElementById('user-number').value;
+    const amount = getInputValueNumber('transfer-amount');
+    const availableBalance = getInnerText('available-balance');
+    // console.log(amount, availableBalance);
+    if(amount<=0 || amount>availableBalance){
+        alert('Invalid Amount');
+        return;
+    }
+    
+
+    const userNumber = getInputValueNumber('user-number');
+    const pinNum = getInputValueNumber('transfer-pin-num');
+
+    // console.log(userNumber, pinNum);
+    if(usersNumber.length<11){
+        alert("Please provide valid account number");
+        return;
+    }
+    
+    if(pinNum != validPinNumb){
+        alert('Please provide valid pin number');
+        return;
+    }
+
+    const totalNewAvailableBalance = availableBalance-amount;
+    // console.log(totalNewAvailableBalance);
+    setInnerText(totalNewAvailableBalance);
+
+    const data= {
+        name:'Transfer Money',
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data);
+    console.log(transactionData);
+});
+
+
+
+
+
+
+
+
+
 
 
 // transaction 
