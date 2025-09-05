@@ -60,6 +60,10 @@ document.getElementById('btn-withdraw').addEventListener('click', function(e){
     document.getElementById('available-balance').innerText=totalNewAvailableBalance;
 })
 
+const logOut = document.getElementById('log-out').addEventListener('click', function(){
+    window.location.href='./index.html';
+})
+
 
 
 
