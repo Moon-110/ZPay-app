@@ -70,6 +70,12 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
     const bank = getInputValue('bank');
     const accountNumber= document.getElementById('account-number').value;
     const addAmount= getInputValueNumber('add-amount');
+
+    if(addAmount<=0){
+        alert("Invalid Amount");
+        return;
+    }
+    
     const pin = getInputValueNumber('add-pin');
 
     // console.log(bank, accountNumber, addAmount, pin);
@@ -107,6 +113,10 @@ document.getElementById('btn-withdraw').addEventListener('click', function(e){
     const amount = getInputValueNumber('withdraw-amount');
     const availableBalance = getInnerText('available-balance');
     // console.log(amount, availableBalance);
+    if(amount<=0 || amount>availableBalance){
+        alert('Invalid Amount');
+        return;
+    }
 
     const agentNumber = getInputValueNumber('agent-number');
     const pinNum = getInputValueNumber('pin-num');
