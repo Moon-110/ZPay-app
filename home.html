@@ -49,19 +49,19 @@
             <img class="mx-auto" src="./assets/send1.png" alt="">
             <h2>Cashout</h2>
         </div>
-        <div class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
+        <div id="transfer-button" class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
             <img class="mx-auto" src="./assets/money1.png" alt="">
             <h2>Transfer Money</h2>
         </div>
-        <div class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
+        <div id="get-bonus-button" class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
             <img class="mx-auto" src="./assets/bonus1.png" alt="">
             <h2>Get Bonus</h2>
         </div>
-        <div class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
+        <div id="pay-bill-button" class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
             <img class="mx-auto" src="./assets/purse1.png" alt="">
             <h2>Pay Bill</h2>
         </div>
-        <div class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
+        <div id="transaction-button" class="text-center p-4 rounded-xl border-1 border-gray-300 bg-[#0808081A]">
             <img class="mx-auto" src="./assets/transaction1.png" alt="">
             <h2>Transactions</h2>
         </div>
@@ -72,7 +72,7 @@
     <section class="all-form-section max-w-lg mx-auto bg-[#e4dede] rounded-lg">
         <!-- add money -->
          
-         <div id="add-money-parent" >
+         <div class="form" id="add-money-parent" >
             <div>
         <h1 class="bg-[#f4f5f7] max-w-lg mx-auto rounded-lg font-bold p-3">Add money</h1>
     </div>
@@ -109,7 +109,7 @@
          </div>
 
          <!-- cash out -->
-         <div id="cash-out-parent" style="display: none">
+         <div class="form" id="cash-out-parent" style="display: none">
             <h1 class="bg-[#f4f5f7] max-w-lg mx-auto rounded-lg font-bold p-3">Cash Out</h1>
 
             <form action="" class="max-w-lg mx-auto bg-[#e4dede] p-5 rounded-lg">
@@ -133,6 +133,28 @@
                 <button id="btn-withdraw" class="btn text-white bg-[#0874F2] mt-5 w-full rounded-3xl">Withdraw Money</button>
             </form>
          </div>
+
+
+         <!-- transfer money -->
+          <div class="form" id="transfer-money-parent" style="display: none;">
+            <h1 class="my-5 font-bold">transfer money</h1>
+          </div>
+
+          <!-- get bonus -->
+          <div class="form" id="get-bonus-parent">
+            <h1 class="my-5 font-bold">get bonus</h1>
+          </div>
+
+          <!-- pay bill -->
+           <div class="form" id="pay-bill-parent">
+            <h1 class="my-5 font-bold">pay bill</h1>
+           </div>
+
+           <!-- transactions -->
+            <div class="form" id="transaction-parent">
+                <h1 class="my-5 font-bold">transaction</h1>
+            </div>
+
     </section>
     
 
