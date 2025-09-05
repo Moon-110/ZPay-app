@@ -1,4 +1,4 @@
-
+const validPin=1234;
 
 document.getElementById('btn-add-money').addEventListener('click', function(e){
     e.preventDefault();
@@ -7,7 +7,7 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
     const bank = document.getElementById('bank').value;
     const accountNumber= document.getElementById('account-number').value;
     const addAmount=parseInt(document.getElementById('add-amount').value);
-    const pin = document.getElementById('add-pin').value;
+    const pin = parseInt(document.getElementById('add-pin').value);
 
     // console.log(bank, accountNumber, addAmount, pin);
     const availableBalance = parseInt(document.getElementById('available-balance').innerText);
@@ -15,6 +15,11 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
 
     if(accountNumber.length<11){
         alert("Please provide valid account number");
+        return;
+    }
+
+    if(pin !== validPin){
+        alert("Please provide valid pin number");
         return;
     }
 
