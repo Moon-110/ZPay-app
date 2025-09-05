@@ -26,4 +26,19 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
     const totalNewAvailableBalance= addAmount+availableBalance;
     document.getElementById('available-balance').innerText = totalNewAvailableBalance;
 
+});
+
+
+// toggling feature
+// add money
+document.getElementById('add-button').addEventListener('click', function(){
+    document.getElementById('cash-out-parent').style.display='none';
+    document.getElementById('add-money-parent').style.display= 'block'
+
+})
+// cash out
+document.getElementById('cash-out-button').addEventListener('click', function(){
+    document.getElementById('add-money-parent').style.display= 'none';
+    document.getElementById('cash-out-parent').style.display='block';
+
 })
