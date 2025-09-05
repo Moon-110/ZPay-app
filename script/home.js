@@ -1,3 +1,5 @@
+
+
 document.getElementById('btn-add-money').addEventListener('click', function(e){
     e.preventDefault();
     // console.log('add money button clicked');
@@ -10,6 +12,11 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
     // console.log(bank, accountNumber, addAmount, pin);
     const availableBalance = parseInt(document.getElementById('available-balance').innerText);
     console.log(availableBalance);
+
+    if(accountNumber.length<11){
+        alert("Please provide valid account number");
+        return;
+    }
 
     const totalNewAvailableBalance= addAmount+availableBalance;
     document.getElementById('available-balance').innerText = totalNewAvailableBalance;
