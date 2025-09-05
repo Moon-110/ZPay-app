@@ -29,7 +29,27 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
 
 });
 
+
+
 // cash out feature
+
+document.getElementById('btn-withdraw').addEventListener('click', function(e){
+    e.preventDefault();
+    // console.log('withdraw money bttn clicked');
+    const amount = parseInt(document.getElementById('withdraw-amount').value);
+    const availableBalance = parseInt(document.getElementById('available-balance').innerText);
+    // console.log(amount, availableBalance);
+    const totalNewAvailableBalance = availableBalance-amount;
+    // console.log(totalNewAvailableBalance);
+    document.getElementById('available-balance').innerText=totalNewAvailableBalance;
+})
+
+
+
+
+
+
+
 
 
 // toggling feature
