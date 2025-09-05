@@ -1,5 +1,7 @@
 const validPin=1234;
 
+const transactionData= [];
+
 // function to get input values
 function getInputValueNumber(id){
     const inputField = document.getElementById(id);
@@ -87,6 +89,12 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
     const totalNewAvailableBalance= addAmount+availableBalance;
     setInnerText(totalNewAvailableBalance);
 
+    const data= {
+        name:'Add Money',
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data);
+    console.log(transactionData);
 });
 
 
@@ -118,6 +126,13 @@ document.getElementById('btn-withdraw').addEventListener('click', function(e){
     const totalNewAvailableBalance = availableBalance-amount;
     // console.log(totalNewAvailableBalance);
     setInnerText(totalNewAvailableBalance);
+
+    const data= {
+        name:'Cash Out',
+        date: new date().toLocalTimeString()
+    }
+    transactionData.push(data);
+    console.log(transactionData);
 })
 
 const logOut = document.getElementById('log-out').addEventListener('click', function(){
