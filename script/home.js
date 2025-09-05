@@ -1,5 +1,6 @@
 const validPin=1234;
 
+// add money feature
 document.getElementById('btn-add-money').addEventListener('click', function(e){
     e.preventDefault();
     // console.log('add money button clicked');
@@ -27,6 +28,8 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
     document.getElementById('available-balance').innerText = totalNewAvailableBalance;
 
 });
+
+// cash out feature
 
 
 // toggling feature
