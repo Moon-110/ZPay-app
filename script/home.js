@@ -32,13 +32,29 @@ document.getElementById('btn-add-money').addEventListener('click', function(e){
 
 
 // cash out feature
-
+const validPinNum = 1234;
 document.getElementById('btn-withdraw').addEventListener('click', function(e){
     e.preventDefault();
     // console.log('withdraw money bttn clicked');
     const amount = parseInt(document.getElementById('withdraw-amount').value);
     const availableBalance = parseInt(document.getElementById('available-balance').innerText);
     // console.log(amount, availableBalance);
+
+    const agentNumber = document.getElementById('agent-number').value;
+    const pinNum = parseInt(document.getElementById('pin-num').value);
+
+    // console.log(agentNumber, pinNum);
+    if(agentNumber.length<11){
+        alert("Please provide valid account number");
+        return;
+    }
+    
+    if(pinNum != validPinNum){
+        alert('Please provide valid pin number');
+        return;
+    }
+
+
     const totalNewAvailableBalance = availableBalance-amount;
     // console.log(totalNewAvailableBalance);
     document.getElementById('available-balance').innerText=totalNewAvailableBalance;
