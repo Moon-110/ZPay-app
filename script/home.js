@@ -2,6 +2,14 @@ const validPin=1234;
 
 const transactionData= [];
 
+
+// logout
+const logOut = document.getElementById('log-out').addEventListener('click', function(){
+    window.location.href='./index.html';
+})
+
+
+
 // function to get input values
 function getInputValueNumber(id){
     const inputField = document.getElementById(id);
@@ -146,9 +154,7 @@ document.getElementById('btn-withdraw').addEventListener('click', function(e){
     console.log(transactionData);
 })
 
-const logOut = document.getElementById('log-out').addEventListener('click', function(){
-    window.location.href='./index.html';
-})
+
 
 
 
@@ -256,7 +262,45 @@ document.getElementById('btn-get-bonus').addEventListener('click', function(e){
 
 
 // pay bill
+const validPinNumber = 1234;
+document.getElementById('btn-pay-now').addEventListener('click', function(e){
+    e.preventDefault();
+    // console.log('withdraw money bttn clicked');
+    const billerNumber= document.getElementById('biller-account-number').value;
+    const amount = getInputValueNumber('biller-add-amount');
+    const availableBalance = getInnerText('available-balance');
+    // console.log(amount, availableBalance);
+    if(amount<=0 || amount>availableBalance){
+        alert('Invalid Amount');
+        return;
+    }
 
+    const billersNumber = getInputValueNumber('biller-account-number');
+    const pinNum = getInputValueNumber('biller-pin-number');
+
+    // console.log(agentNumber, pinNum);
+    if(billerNumber.length<11){
+        alert("Please provide valid account number");
+        return;
+    }
+    
+    if(pinNum != validPinNumber){
+        alert('Please provide valid pin number');
+        return;
+    }
+
+
+    const totalNewAvailableBalance = availableBalance-amount;
+    // console.log(totalNewAvailableBalance);
+    setInnerText(totalNewAvailableBalance);
+
+    const data= {
+        name:'Pay Bill',
+        date: new Date().toLocaleTimeString()
+    }
+    transactionData.push(data);
+    console.log(transactionData);
+})
 
 
 
