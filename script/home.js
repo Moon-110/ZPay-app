@@ -235,7 +235,24 @@ document.getElementById('transaction-button').addEventListener('click', function
 
 // 
 
+document.getElementById('btn-get-bonus').addEventListener('click', function(e){
+    e.preventDefault();
 
+    const couponInput = document.getElementById('get-bonus-coupon').value;
+    const availableBalance = getInnerText('available-balance');
+
+    if(couponInput==='Coupon Code'){
+        let discount = availableBalance* 0.10;
+        let finalPrice = availableBalance -discount;
+    
+    alert('Coupon applied! You got 10% discount : ', +finalPrice);
+    }
+    else
+    {
+        alert('Invalid coupon.');
+    }
+
+})
 
 
 
