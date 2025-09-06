@@ -255,6 +255,14 @@ document.getElementById('btn-get-bonus').addEventListener('click', function(e){
 })
 
 
+// pay bill
+
+
+
+
+
+
+
 
 
 
